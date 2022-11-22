@@ -1,0 +1,785 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- box icon -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" />
+
+    <!-- sweetalert -->
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+    <!-- Animate -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Eazy RentCar</title>
+  </head>
+  <body>
+    <!-- navbar starts -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-3 animate__animated animate__fadeInDown">
+        <div class="container">
+          <a class="navbar-brand" href="#home"><span>E</span>azy <span>R</span>entCar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
+            <ul class="navbar-nav me-4">
+              <li class="nav-item">
+                <a class="nav-link me-4 active" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href ="#models">Vehicle Models</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#contact">Contact</a>
+              </li>
+              <div class="login-home ">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success btn-sm fw-bolder" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  <i class='bx bxs-lock' ></i> Log in
+                </button>
+                <button type="button" class="btn btn-outline-info btn-sm fw-bolder" data-bs-toggle="modal" data-bs-target="#signup">
+                   Register
+              </div>
+            </ul>
+          </div>
+          
+        </div>
+      </nav>
+    </header>
+    <!-- navbar ends -->
+    <!-- section Home -->
+    <section class="home" id="home">
+      <div class="container text-center" style="height: 500px;" >
+        <h1 class="heading mt-4 izi " data-aos="zoom-in" data-aos-duration="1000"><span>E</span>AZY <span>R</span>ENTCAR</h1>
+        
+        <p class="subheading" data-aos="zoom-in" data-aos-duration="1300">Want to rent a cheap car in Semarang now even easier. Can book online! You no longer need to come to our office just to book a car rental with us. Simply contact us at the contact that is already available, make a payment, the car can be picked up or we will pick it up at a predetermined meeting point.</p>
+        <div class="row  mt-5">
+          <div class="col-lg-5 " style="height: 500px;">
+            <!-- form -->
+            <form class="form-control shadow">
+              <select class="form-select mt-3" aria-label="Default select example" id="car">
+                <option selected>Select Your Car Type</option>
+                <option value="Toyota Innova">Toyota Innova Reborn</option>
+                <option value="Toyota Avanza Veloz">Toyota Avanza Veloz</option>
+                <option value="Toyota Alphard">Toyota Alphard</option>
+                <option value="Toyota Vios">Toyota Vios</option>
+                <option value="Toyota Hiace">Toyota Hiace</option>
+              </select>
+
+              <div class="input-group mt-5">
+                <span class="input-group-text" id="inputGroup-sizing-default"><i class='bx bxs-location-plus'></i> Pick-Up</span>
+                <input type="text" placeholder="Enter a City or Airport" class="form-control placeholder " aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="Loct-Pick-up" required/>
+              </div>
+              <div class="input-group mt-3">
+                <span class="input-group-text" id="inputGroup-sizing-default"><i class='bx bxs-calendar'></i>Pick-Up</span>
+                
+                <input type="date" class="form-control placeholder" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="pick-up-date" required/>
+                <input type="time" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="pick-up-time">
+              </div>
+              <div class="input-group mt-3 ">
+                <span class="input-group-text" id="inputGroup-sizing-default"><i class='bx bxs-calendar'></i>Drop-off</span>
+                <input type="date" class="form-control placeholder" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="drop-off-date">
+                <input type="time" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="drop-off-time">
+              </div>
+              <div class="d-grid gap-2 col-12 mt-4 mb-3">
+                <button type="button" class="btn btn-success fw-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn1">
+                 CONTINUE CAR RESERVATION
+                </button>
+              </div>
+            </form>
+            <!-- form -->
+          </div>
+          <div class="col-lg-7">
+            <!-- Carusell -->
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="gambar/jazz biru.png" style="height: 320px; " class="d-block w-100" alt="jazz.png">
+                </div>
+                <div class="carousel-item ">
+                  <img src="gambar/innova - Copy.png" style="height: 320px;" class="d-block w-100" alt="innova.png">
+                </div>
+                <div class="carousel-item ">
+                  <img src="gambar/hiace.png" style="height: 320px;"class="d-block w-100" alt="hiace.png">
+                </div>
+                
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <!-- Carusell -->
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- section Home -->
+    <!-- section modal login -->
+<!-- Modal -->
+<div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title1" id="staticBackdropLabel">Login Form</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body1">
+        <form>
+          <label>
+            <i class='bx bxs-user'></i> 
+            Username 
+          </label>
+          <div>
+            <input type="text1" placeholder="Username" required/>
+          </div>
+          <label>
+            <i class='bx bxs-key'></i>
+            Password  
+          </label>
+          <div>
+            <input type="password" class="passlogin" placeholder="Password" required/>
+          </div>
+          <div>
+            <button class="btn btn-success btnlgn" type ="submit" data-bs-dismiss="modal" id="BTNLOGIN">
+              <i class='bx bxs-lock' ></i> 
+              Login
+            </button>
+          </div>
+          <div class="foot">
+            <a href="#" class="new-acc" data-bs-dismiss="modal" data-bs-toggle="modal"  data-bs-target="#signup">
+              I don't Have an Account
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- section modal login -->
+
+     <!-- section modal sign up -->
+<!-- Modal -->
+<div class="modal fade " id="signup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title1" id="staticBackdropLabel">Register Form</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="mb-1 fw-bold">Register Here!</h5>
+        <p class="text-muted mb-4">Please fill all fields below</p>
+        <form action="">
+          <div class="row">
+            <div class="col">
+              <label for="firstname"> First Name</label>
+              <input type="text" class="form-control" id="firstname">
+            </div>
+            <div class="col">
+              <label for="lastname">Last Name</label>
+              <input type="text" class="form-control" id="lastname">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" >
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="pass" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleFormControlInput1" >
+            </div>
+            <div class="col">
+              <label for="pass2" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="exampleFormControlInput1" >
+            </div>
+          </div>
+          <div class="d-grid mb-3">            <button class="btn btn-info" type ="submit" data-bs-dismiss="modal" >
+            <i class='bx bxs-book-add'></i>
+           Register
+          </button>
+        </div>
+        </form>
+        <p class="text-muted text-center">Already have an account ? <a href="#" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#staticBackdrop" >Login</a></p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- section modal sign up -->
+
+    <!-- section services -->
+    <section class="product" id="services">
+      <div class="container">
+        <div class="row">
+          <h1 class="heading text-center" data-aos="zoom-in" data-aos-duration="1000">Services</h1>
+          <div class="col-md-6 col-12 mb-4">  
+            <div class="box-product" data-aos="fade-right" data-aos-duration="1200">
+              <div class="card card-product">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="product-content">Rent Car</div>
+                      <img src="./gambar/car-rentals.jpg" alt="" width="350px" style="margin-bottom: 25px;"> <br>
+                      <span class="text-center" style="color: black;">We serve all complaints about your car and are ready to help solve it</span> <br>
+                      <a href="" class="btn btn-rent" id="btn-rent"
+                >Order Now </a >
+                    </div>   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-12 mb-3" data-aos="fade-left" data-aos-duration="1200">
+            <div class="product-text" >
+              <div class="product-title">
+                We provide several types of cars for rent to you
+              </div>
+              <div class="sub-title-product ">
+                We offer the best price for the car rental experience at eazy car
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 col-12 mb-3" data-aos="fade-right" data-aos-duration="1200" style="margin-left: 30px;">
+            <div class="product-text">
+              <div class="product-title">
+                We provide car consulting services to support the condition of the car
+              </div>
+              <div class="sub-title-product">
+                We offer the best price for the consulting car experience at eazy car
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-12 mb-4" data-aos="fade-left" data-aos-duration="1200">  
+            <div class="box-product">
+              <div class="card card-product">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="product-content-consulting">Car Consulting</div>
+                      <img src="./gambar/png-transparent-business-management-strategic-planning-logo-information-technology-consulting-online-business-flyer-text-service-logo.png" alt="" width="350px" style="margin-bottom: 15px;"> <br>
+                      <span class="text-center" style="color: black;">We serve all complaints about your car</span> 
+                      <a href="" class="btn btn-rent" id="btn-rent"
+                >Order Now </a >
+                    </div>   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!-- section services -->
+
+    <!-- section car models -->
+    <section class="models" id="models">
+      <div class="container mt-4 ">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h1 class="heading mt-4" data-aos="zoom-in" data-aos-duration="1000">All Vehicles for All Your Trips</h1>
+            <p class="subheading" data-aos="zoom-in" data-aos-duration="1300">With Eazy, whatever your needs, you can choose various variants ranging from SUV, MPV, City Car, which can be tailored to your needs.</p>
+          </div>
+        </div>
+        <div class="row" data-aos="zoom-in" data-aos-duration="1000">
+          <div class="col">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <div class="card h-100" >
+                  <div class="container d-inline-flex">
+                    <img src="gambar/innova - Copy.png" style="height: 200px;" class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title heading">Kijang Innova Reborn Diesel</h5>
+                    <p class="card-text">
+                      <table class="table">
+                        <tr>
+                          <th>Seats</th>
+                          <td>7-8 seats</td>
+                        </tr>
+                        <tr>
+                          <th>Transmission</th>
+                          <td>Manual</td>
+                        </tr>
+                        <tr>
+                          <th>A/C</th>
+                          <td>Yes</td>
+                        </tr>
+                        <tr>
+                          <th>Driver</th>
+                          <td>Yes</td>
+                        </tr>
+                      </table>
+                    </p>
+                    <a href="#" class="btn btn-warning ">Rp. 550.000/24 hours</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                  <div class="container d-inline-flex">
+                    <img src="gambar/alphard black.png" style="height: 200px;" class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title heading">Toyota Alphard</h5>
+                    <p class="card-text"><table class="table">
+                      <tr>
+                        <th>Seats</th>
+                        <td>6 seats</td>
+                      </tr>
+                      <tr>
+                        <th>Transmission</th>
+                        <td>Automatic</td>
+                      </tr>
+                      <tr>
+                        <th>A/C</th>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <th>Driver</th>
+                        <td>Yes</td>
+                      </tr>
+                    </table></p>
+                    <a href="#" class="btn btn-warning ">Rp. 2.550.000/24 hours </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                  <div class="container d-inline-flex">
+                    <img src="gambar/jazzmrh.png" style="height: 200px;" class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title heading">Honda Jazz</h5>
+                    <p class="card-text">
+                      <table class="table ">
+                      <tr>
+                        <th>Seats</th>
+                        <td>5 seats</td>
+                      </tr>
+                      <tr>
+                        <th>Transmission</th>
+                        <td>Manual</td>
+                      </tr>
+                      <tr>
+                        <th>A/C</th>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <th>Driver</th>
+                        <td>Yes</td>
+                      </tr>
+                    </table></p>
+                    <a href="#" class="btn btn-warning ">Rp. 550.000/24 hours</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row  mt-5 " data-aos="zoom-in" data-aos-duration="1000">
+          <div class="col">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <div class="card h-100">
+                  <div class="container d-inline-flex">
+                    <img src="gambar/hiace.png" style="height: 200px;" class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title heading">Toyota Hiace</h5>
+                    <p class="card-text">
+                      <table class="table">
+                        <tr>
+                          <th>Seats</th>
+                          <td>7-8 seats</td>
+                        </tr>
+                        <tr>
+                          <th>Transmission</th>
+                          <td>Manual</td>
+                        </tr>
+                        <tr>
+                          <th>A/C</th>
+                          <td>Yes</td>
+                        </tr>
+                        <tr>
+                          <th>Driver</th>
+                          <td>Yes</td>
+                        </tr>
+                      </table>
+                    </p>
+                    <a href="#" class="btn btn-warning">Rp. 550.000/24 hours</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                  <div class="container d-inline-flex">
+                    <img src="gambar/avanza.png " style="height: 200px;" class="card-img-top" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title heading">Toyota Avanza G</h5>
+                    <p class="card-text"><table class="table">
+                      <tr>
+                        <th>Seats</th>
+                        <td>6-7 seats</td>
+                      </tr>
+                      <tr>
+                        <th>Transmission</th>
+                        <td>Manual</td>
+                      </tr>
+                      <tr>
+                        <th>A/C</th>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <th>Driver</th>
+                        <td>Yes</td>
+                      </tr>
+                    </table></p>
+                    <a href="#" class="btn btn-warning">Rp. 450.000/24 hours</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+               <div class="container d-inline-flex">
+                  <img src="gambar/vios.png" style="height: 200px;" class="card-img-top" alt="...">
+                </div>
+                  <div class="card-body">
+                    <h5 class="card-title heading">Toyota Vios</h5>
+                    <p class="card-text"><table class="table">
+                      <tr>
+                        <th>Seats</th>
+                        <td>4 seats</td>
+                      </tr>
+                      <tr>
+                        <th>Transmission</th>
+                        <td>Automatic</td>
+                      </tr>
+                      <tr>
+                        <th>A/C</th>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <th>Driver</th>
+                        <td>Yes</td>
+                      </tr>
+                    </table></p>
+                    <a href="#" class="btn btn-warning">Rp. 350.000/24 hours</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section car models -->
+    <!-- section about -->
+    <section class="about" id="about">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <h1 class="heading mt-4"data-aos="zoom-in" data-aos-duration="1000">About us</h1>
+            <p class="subheading"data-aos="zoom-in" data-aos-duration="1000">Eazy RentCar is the official website of Eazy Transport. Experienced in providing quality cars with cheap and affordable rental rates. With this site, we hope to be able to help those who need car rental services in Semarang easily and safely.We are ready to serve your various transportation needs such as car rental for tours, out of town, student graduations, transfers, weddings, Eid homecoming, events, companies and various needs that you need. Until now we are still able to provide the best service to all consumers both from within the country and abroad.</p>        
+            <p class="subheading"data-aos="zoom-in" data-aos-duration="1000">We provide various units of cars to meet the needs of various customer tastes. Currently we provide various types of vehicles, starting from the type of City Car, MPV, so that our customers can freely choose the type of car they want.</p>        
+            <p class="subheading"data-aos="zoom-in" data-aos-duration="1000">We want to provide relatively cheap rates so that all levels of society can take advantage of this opportunity without having to be afraid anymore. We are transparent with all our customers, like a family so as to create mutually beneficial harmonization.</p>        
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h1 class="heading mt-4"data-aos="zoom-in" data-aos-duration="1000">Location</h1>
+           <!--Google map-->
+        <div id="map-container-google-1" data-aos="flip-down" data-aos-duration="1400" class="z-depth-1-half map-container" style="height: 500px">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2117726308325!2d110.40710211427641!3d-6.984315970335542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708bbd7f1a5095%3A0xf65ef341c1525c5a!2sTugu%20Muda%20Semarang!5e0!3m2!1sid!2sid!4v1668585429615!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      <!--Google Maps-->       
+          </div>
+        </div>
+    </section>
+      </div>
+
+    <!-- section about -->
+    <!-- section contact -->
+    <section class="contact" id="contact">
+      <div class="container-fluid">
+        <div class="container email-box">
+          <div class="row mb-5">
+            <div class="col-lg-5 col-md-8 m-auto">
+              <div class="sub-heading text-center">
+                <h1 class="heading mt-4" data-aos="zoom-in" data-aos-duration="1000">Submit Your Email If You Have Any Questions</h1>
+                <span data-aos="zoom-in" data-aos-duration="1000">We are ready to provide you with solutions to your questions</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-5 col-md-12 mx-auto" data-aos="zoom-in" data-aos-duration="1800">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Insert your email"
+                  aria-label="Recipient's username"
+                  aria-describedby="button-addon2"
+                />
+                <button
+                  class="btn btn-news btn-success"
+                  type="button"
+                  id="button-addon2"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section contact -->
+    <!-- section footer  -->
+    <footer class="bg-link text-center mt-5">
+      <div class="container p-4">
+        <section class="">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase text-secondary">Eazy RentCar</h5>
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-next text-secondary">
+                    © 2022 - <br />
+                    Kelompok 11</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase text-secondary">Service</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-next text-secondary">Rent Car</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-next text-secondary">Car Consulting</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-next text-secondary">Feedback</a>
+                </li>
+               
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase text-secondary">Vehicle Models</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-next text-secondary">SUV Car</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-next text-secondary">MPV Car</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-next text-secondary">City Car</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ">
+              <h5 class="text-uppercase text-secondary">Contact Us</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-next text-secondary">Facebook</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-next text-secondary">Instagram</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-next text-secondary">Tiktok</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+    <!-- section footer -->
+
+
+
+
+    <!-- sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
+    
+    <!-- js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">RESERVATION</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead class="text-center ">
+                <th colspan="2">Description</th>
+              </thead>
+              <tr>
+                <td><i class='bx bx-car'> Type Car</i></td>
+                <td class="output" id="mobil"></td>
+              </tr>
+              <tr>
+                <td><i class='bx bx-location-plus'> Location Pick-Up</i> </td>
+                
+                <td class="output" id="out4"></td>
+              </tr>
+              <tr>
+                <td><i class='bx bxs-calendar'> Pick-Up Date </i></td>
+                <td class="output" id="out1"></td>
+              </tr>
+              <tr>
+                <td><i class='bx bx-time'> Pick-Up Time</i></td>
+                <td class="output" id="out2"></td>
+              </tr>
+              <tr>
+                <td><i class='bx bxs-calendar'> Drop-Off Date </i></td>
+                <td class="output" id="out3"></td>
+              </tr>
+              <tr>
+                <td><i class='bx bx-time'> Drop-Off Time </i></td>
+                <td class="output" id="out5"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success" id="btnsend">SEND</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const Mobil = document.querySelector('#car');
+      const LoctPickup = document.getElementById('Loct-Pick-up');
+      const Pickupdate = document.getElementById('pick-up-date');
+      const Pickuptime = document.getElementById('pick-up-time');
+      const Dropoffdate = document.getElementById('drop-off-date');
+      const Dropofftime = document.getElementById('drop-off-time');
+      const btn1 = document.getElementById('btn1');
+      const output1 = document.getElementById('out1');
+      const output2 = document.getElementById('out2');
+      const output3 = document.getElementById('out3');
+      const output4 = document.getElementById('out4');
+      
+
+      function submit(){
+            out1.innerHTML = Pickupdate.value;
+            out2.innerHTML = Pickuptime.value;
+            out3.innerHTML = Dropoffdate.value;
+            out4.innerHTML = LoctPickup.value;
+            out5.innerHTML = Dropofftime.value;
+            mobil.innerHTML = Mobil.value;
+            
+        }
+        btn1.addEventListener('click',submit);
+    </script>
+
+    <!-- Script AOS  -->
+    <script>
+      const buttonaddon2 = document.getElementById('button-addon2');
+      buttonaddon2.addEventListener('click', function(){
+        Swal.fire({
+  position: 'center',
+  icon: 'success',
+  title: 'Your email has been saved',
+  showConfirmButton: false,
+  timer: 1500
+})
+      })
+    </script>
+    <!-- script alert btnlogin -->
+    <script>
+      const btnlogin = document.getElementById('BTNLOGIN');
+      btnlogin.addEventListener('click', function(){
+        Swal.fire({
+          title:"Welcome",
+          text:"Login Successfully",
+          icon: "success"
+        })
+      })
+    </script>
+
+    <!-- script alert btn reserve -->
+    <script>
+      const btnbook = document.getElementById('btnsend');
+      btnbook.addEventListener('click', function(){
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your order has been sent !',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      })
+    </script>
+  </body>
+</html>
